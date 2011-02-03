@@ -10,7 +10,6 @@
 \item \code{\link{get_cluster_labels.hclust}}
 \item \code{\link{get_cluster_labels.dendrogram}}		 
 \item \code{\link{get_cluster_labels.tree}}	
-\item \code{\link{get_cluster_labels.kmeans}}
 }
 
 To extract the cluster data, use \code{\link{get_cluster_data}}}

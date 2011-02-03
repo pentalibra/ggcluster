@@ -4,8 +4,11 @@
 \usage{get_ellipsoid_data(data, x="x", y="y", cluster="cluster")}
 \description{Creates ellipsoid from dataframe containing x and y}
 \details{Generic function to extract cluster labels from a model into a data frame}
-\arguments{\item{model}{object of type princomp}
-\item{...}{ignored}}
+\arguments{\item{data}{A data frame containing at least three columns: x, y and cluster.
+x and y represent the plotting coordinates, and cluster is the cluster allocation.}
+\item{x}{Character string, indicating the x coordinate}
+\item{y}{Character string, indicating the y coordinate}
+\item{cluster}{Character string, indicating the cluster allocation}}
 \examples{data(iris)
 d <- iris[, -5]
 model <- kmeans(d, 3)
@@ -16,5 +19,8 @@ eedata <- cbind(cdata, pcdata)
 eldata <- get_ellipsoid_data(eedata)
 
 ggplot() + 
-geom_point(data=cbind(cdata, pcdata), aes(x=x, y=y, colour=factor(cluster))) +
-geom_polygon(data=eldata, aes(x=x, y=y, colour=factor(cluster), group=cluster), alpha=0.1)}
+geom_point(data=cbind(cdata, pcdata), 
+aes(x=x, y=y, colour=factor(cluster))) +
+geom_polygon(data=eldata, 
+aes(x=x, y=y, colour=factor(cluster), group=cluster), 
+alpha=0.1)}

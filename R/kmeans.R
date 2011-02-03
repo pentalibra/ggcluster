@@ -16,6 +16,18 @@ get_cluster_data.kmeans <- function(model, ...){
 	data.frame(cluster=model$cluster)
 }
 
+#' Extracts cluster allocation from object of type `Mclust`
+#' 
+#' Generic function to extract cluster labels from a model into a data frame
+#' 
+#' @param model object of type kmeans
+#' @param ... ignored
+#' @export
+get_cluster_data.Mclust <- function(model, ...){
+	data.frame(cluster=model$classification)
+}
+
+
 #' Extracts primary principal components from object of type `princomp`
 #' 
 #' Generic function to extract cluster labels from a model into a data frame
@@ -34,8 +46,11 @@ get_cluster_data.princomp <- function(model, ...){
 #' 
 #' Generic function to extract cluster labels from a model into a data frame
 #' 
-#' @param model object of type princomp
-#' @param ... ignored
+#' @param data A data frame containing at least three columns: x, y and cluster.
+#' x and y represent the plotting coordinates, and cluster is the cluster allocation.
+#' @param x Character string, indicating the x coordinate
+#' @param y Character string, indicating the y coordinate
+#' @param cluster Character string, indicating the cluster allocation
 #' @export
 #' @examples
 #' data(iris)
@@ -48,9 +63,11 @@ get_cluster_data.princomp <- function(model, ...){
 #' eldata <- get_ellipsoid_data(eedata)
 #' 
 #' ggplot() + 
-#' 		geom_point(data=cbind(cdata, pcdata), aes(x=x, y=y, colour=factor(cluster))) +
-#' 		geom_polygon(data=eldata, aes(x=x, y=y, colour=factor(cluster), group=cluster), alpha=0.1)
-
+#' 		geom_point(data=cbind(cdata, pcdata), 
+#' 			aes(x=x, y=y, colour=factor(cluster))) +
+#' 		geom_polygon(data=eldata, 
+#' 			aes(x=x, y=y, colour=factor(cluster), group=cluster), 
+#' 			alpha=0.1)
 get_ellipsoid_data <- function(data, x="x", y="y", cluster="cluster"){
 	get_ellipse <- function(clustn){
 		sdata <- data[data[, cluster]==clustn, c(x, y)]
@@ -61,6 +78,38 @@ get_ellipsoid_data <- function(data, x="x", y="y", cluster="cluster"){
 	}
 	ldply(unique(data[, cluster]), get_ellipse)
 }
+
+
+#' Convenience function to create a cluster plot using either kmeans or Mclust 
+#' 
+#' This function creates a simple ggplot object using the data and cluster model.  Since it 
+#' is not aesthetically perfect, the user migth use it as a template to create more
+#' customized plots. 
+#' 
+#' @param data a data frame to be used in clustering
+#' @param model a cluster model of class kmeans or Mclust
+#' @export
+#' @examples
+#' data(iris)
+#' d <- iris[, -5]
+#' # Using kmeans for the clustering
+#' model <- kmeans(d, 3)
+#' plot_cluster(d, model)
+#' # Using Mclust for the clustering
+#' model <- Mclust(d, 3)
+#' plot_cluster(d, model)
+plot_cluster <- function(data, model){
+	pc <- princomp(data)
+	cdata <- get_cluster_data(model)
+	pcdata <- get_cluster_data(pc)
+	eedata <- cbind(cdata, pcdata)
+	eldata <- get_ellipsoid_data(eedata)
+	
+	ggplot() + 
+			geom_point(data=cbind(cdata, pcdata), aes(x=x, y=y, colour=factor(cluster))) +
+			geom_polygon(data=eldata, aes(x=x, y=y, colour=factor(cluster), group=cluster), alpha=0.1)
+}
+
 
 #data(iris)
 #d <- iris[, -5]
@@ -238,125 +287,4 @@ get_ellipsoid_data <- function(data, x="x", y="y", cluster="cluster"){
 #					p=p
 #			))
 #}
-#
-#analyse_cluster_profiles <- function(data, clusters){
-##  cmeans <- ldply(data[, 1:13], function(x)tapply(x, data$clust, mean))
-#	data$clust <- clusters
-#	cmeans <- ldply(data[, -ncol(data)], function(x)tapply(x, data$clust, mean))
-#	#rownames(cmeans) <- cmeans$.id
-#	#cmeans$.id <- NULL
-#	
-#	sortClust <- function(data, clust){
-#		x <- data[, c(1, 1+clust)]
-#		x[order(x[, 2], decreasing=TRUE), ]
-#	}
-#	
-#	nclusters <- length(unique(clusters))
-#	ClusterMeans <- cmeans[,1]
-#	
-#	for (i in 1:nclusters){
-#		ClusterMeans <- cbind(
-#				ClusterMeans,
-#				sortClust(cmeans, i)
-#		)
-#	}
-#	return(ClusterMeans[,-1])
-#}
-#
-#
-#################################################################################
-## Main processing
-#################################################################################
-#
-## Global variables - some of them to be determined as result of analysis
-#
-## Number of clusters
-#nclusters <- 5
-#
-#xLabel <- "<---   Luxury   --->"
-#yLabel <- "<---   Essentials   --->"
-#
-#set.seed(12345)
-#
-#
-#
-#####################################################
-## Determine number of clusters
-#####################################################
-#
-##cdata <- kd[, 2:15] # Remove resp id, crossbreak and weight columns
-#
-#standardise <- function(x){
-#	x/mean(x)
-#}
-#
-#cdata <- kd[, 2:15]
-##cdata <- cdata -4
-##cdata <- cdata[, names(cdata)!="new.product"]
-##cdata <- cdata[, names(cdata)!="slowly"]
-##cdata <- cdata[, names(cdata)!="essentials"]
-##cdata <- cdata[, names(cdata)!="familiar"]
-##sdata <- as.data.frame(llply(cdata, standardise))
-#sdata <- as.data.frame(scale(cdata))
-#
-#
-#p <- ggClusterScree(sdata)
-##print(p)
-#
-#PCAcomponents <- calc_PCA_components(sdata)
-#
-#p <- make_PCA_graph(sdata)
-#print(p)
-#
-#cres3 <- analyse_clusters(sdata, PCAcomponents, 3)
-#cres3_profiles <- analyse_cluster_profiles(sdata, cres3$clusters)
-#print(cres3$p)
-#
-#cres4 <- analyse_clusters(sdata, PCAcomponents, 4)
-#cres4_profiles <- analyse_cluster_profiles(sdata, cres4$clusters)
-#print(cres4$p)
-#
-#cres5 <- analyse_clusters(sdata, PCAcomponents, 5)
-#cres5_profiles <- analyse_cluster_profiles(sdata, cres5$clusters)
-#print(cres5$p)
-#
-#cres6 <- analyse_clusters(sdata, PCAcomponents, 6)
-#cres6_profiles <- analyse_cluster_profiles(sdata, cres6$clusters)
-#print(cres6$p)
-#
-## Export profiles to Excel
-#write.excel(cres4_profiles)
-#write.excel(cres5_profiles)
-#
-#
-## Add cluster centers to original dataset
-#
-#results <- data.frame(
-#		RESPID = kd$RESPID,
-#		Cluster3 = cres3$clusters,
-#		Cluster4 = cres4$clusters,
-#		Cluster5 = cres5$clusters,
-#		Cluster6 = cres6$clusters,
-#		Factor_x = PCAcomponents$Comp1,
-#		Factor_y = PCAcomponents$Comp2
-#)
-#
-#write.csv(results, paste(path, "\\data\\Segmentation results.csv", sep=""))
-#write.csv(removed_responses, paste(path, "\\data\\Removed responses.csv", sep=""))
-#write.csv(na_responses, paste(path, "\\data\\Incomplete responses.csv", sep=""))
-#
-#### Missing data analysis
-##
-###write.excel(kdall[-which(complete.cases(kdall)),])
-##
-###
-##
-##fullprofile <- merge(fulldata, results, by="RESPID", all.x=TRUE)
-##
-##tapply(as.numeric(fullprofile$Gender), fullprofile$Cluster4, mean)
-###tapply(as.numeric(fullprofile$Age), fullprofile$Cluster4, mean)
-##tapply(as.numeric(fullprofile$Languages), fullprofile$Cluster4, mean)
-##tapply(as.numeric(fullprofile$Countries_historic), fullprofile$Cluster4, mean)
-##
-##
 

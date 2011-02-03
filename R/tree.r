@@ -16,10 +16,13 @@
 #' tree_label_data <- get_cluster_labels(cpus.ltr)
 #' leaf_label_data <- get_data_tree_leaf_labels(cpus.ltr)
 #' ggplot(tree_data) +
-#' 	geom_segment(aes(x=x, y=y, xend=xend, yend=yend, size=n), colour="blue", alpha=0.5) +
+#' 	geom_segment(aes(x=x, y=y, xend=xend, yend=yend, size=n), 
+#' 		colour="blue", alpha=0.5) +
 #' 	scale_size("n", to=c(0, 3)) +
-#' 	geom_text(data=tree_label_data, aes(x=x, y=y, label=label), vjust=-0.5, size=4) +
-#' 	geom_text(data=leaf_label_data, aes(x=x, y=y, label=label), vjust=0.5, size=3)
+#' 	geom_text(data=tree_label_data, 
+#' 		aes(x=x, y=y, label=label), vjust=-0.5, size=4) +
+#' 	geom_text(data=leaf_label_data, 
+#' 		aes(x=x, y=y, label=label), vjust=0.5, size=3)
 get_cluster_data.tree <- function(model, ...){
   require(tree)
 	# Uses tree:::treeco to extract data frame of plot locations
