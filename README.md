@@ -14,8 +14,8 @@ It supports functions to plot the results of:
 ggcluster offers two generic functions to extract data and text from the various clustering
 models:
 
-* 'get_cluster_data()' will extract line segment data into a data frame.
-* 'get_cluster_labels()' will extract text labels into a data frame.
+* `get_cluster_data()` will extract line segment data into a data frame.
+* `get_cluster_labels()` will extract text labels into a data frame.
 
 The results of these functions can then be passed to `ggplot()` for plotting.
 

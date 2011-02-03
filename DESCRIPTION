@@ -1,5 +1,5 @@
 Package: ggcluster
-Version: 0.0-3
+Version: 0.0-04
 Date: 2011-02-03
 Title: Tools for creating cluster plots, tree plots and dendrograms
     using ggplot
@@ -8,8 +8,8 @@ Description: Tools for creating cluster plots, tree plots and
 URL: www.pentalibra.com
 Author: Andrie de Vries <andrie.de.vries@pentalibra.com>
 Maintainer: Andrie de Vries <andrie.de.vries@pentalibra.com>
-Depends: stats, cluster, tree
-Suggests: ggplot2,
+Depends: stats, cluster, tree, plyr, ggplot2
+Suggests:
 Imports:
 License: GPL (>=2)
 LazyLoad: true
