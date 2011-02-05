@@ -4,45 +4,31 @@
 ###############################################################################
 
 
-#' Generic function to extract cluster data from a model into a data frame
+#' Extract cluster data from a model into a list of data frames.
 #' 
-#' Generic function to extract cluster data from a model into a data frame
+#' This function provides a generic mechanism to extract relevant plotting data, 
+#' typically line segments and labels, from a variety of cluster models.
+#' 
+#' In the case of dendrograms and tree models, the function will extract line 
+#' segment data and labels.
+#' 
+#' In the case of kmeans or Mclust models, the function extracts the cluster allocation.
 #' 
 #' @param model object of type hclust, dendrogram, tree or kmeans
 #' @param ... ignored
+#' @export
+#' @return a list of data frames that contain the data appropriate to each cluster model
 #' @seealso 
 #' There are several implementations for specific cluster algorithms:
 #'
 #' \itemize{ 
-#' \item \code{\link{get_cluster_data.hclust}}
-#' \item \code{\link{get_cluster_data.dendrogram}}		 
-#' \item \code{\link{get_cluster_data.tree}}	
-#' \item \code{\link{get_cluster_data.kmeans}}
+#' \item \code{\link{cluster_data.hclust}}
+#' \item \code{\link{cluster_data.dendrogram}}		 
+#' \item \code{\link{cluster_data.tree}}	
+#' \item \code{\link{cluster_data.kmeans}}
+#' \item \code{\link{cluster_data.Mclust}}
 #' }
-#' 	
-#' To extract the cluster labels, use \code{\link{get_cluster_labels}}
-#' @export
-get_cluster_data <- function(model, ...){
-	UseMethod("get_cluster_data", model)
+cluster_data <- function(model, ...){
+	UseMethod("cluster_data", model)
 }
 
-#' Generic function to extract cluster labels from a model into a data frame
-#' 
-#' Generic function to extract cluster labels from a model into a data frame
-#' 
-#' @param model object of type hclust, dendrogram, tree or kmeans
-#' @param ... ignored
-#' @seealso 
-#' There are several implementations for specific cluster algorithms:
-#'
-#' \itemize{ 
-#' \item \code{\link{get_cluster_labels.hclust}}
-#' \item \code{\link{get_cluster_labels.dendrogram}}		 
-#' \item \code{\link{get_cluster_labels.tree}}	
-#' }
-#' 	
-#' To extract the cluster data, use \code{\link{get_cluster_data}}
-#' @export
-get_cluster_labels <- function(model, ...){
-	UseMethod("get_cluster_labels", model)
-}

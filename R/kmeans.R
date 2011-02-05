@@ -11,8 +11,9 @@
 #' 
 #' @param model object of type kmeans
 #' @param ... ignored
+#' @seealso \code{\link{plot_cluster}}
 #' @export
-get_cluster_data.kmeans <- function(model, ...){
+cluster_data.kmeans <- function(model, ...){
 	data.frame(cluster=model$cluster)
 }
 
@@ -20,10 +21,11 @@ get_cluster_data.kmeans <- function(model, ...){
 #' 
 #' Generic function to extract cluster labels from a model into a data frame
 #' 
-#' @param model object of type kmeans
+#' @param model object of type Mclust
+#' @seealso \code{\link{plot_cluster}}
 #' @param ... ignored
 #' @export
-get_cluster_data.Mclust <- function(model, ...){
+cluster_data.Mclust <- function(model, ...){
 	data.frame(cluster=model$classification)
 }
 
@@ -33,9 +35,10 @@ get_cluster_data.Mclust <- function(model, ...){
 #' Generic function to extract cluster labels from a model into a data frame
 #' 
 #' @param model object of type princomp
+#' @seealso \code{\link{plot_cluster}}
 #' @param ... ignored
 #' @export
-get_cluster_data.princomp <- function(model, ...){
+cluster_data.princomp <- function(model, ...){
 	data.frame(
 			x = model$scores[,1],
 			y = model$scores[,2]
@@ -56,11 +59,11 @@ get_cluster_data.princomp <- function(model, ...){
 #' data(iris)
 #' d <- iris[, -5]
 #' model <- kmeans(d, 3)
-#' cdata <- get_cluster_data(model)
+#' cdata <- cluster_data(model)
 #' pc <- princomp(d)
-#' pcdata <- get_cluster_data(pc)
+#' pcdata <- cluster_data(pc)
 #' eedata <- cbind(cdata, pcdata)
-#' eldata <- get_ellipsoid_data(eedata)
+#' eldata <- ellipsoid_data(eedata)
 #' 
 #' ggplot() + 
 #' 		geom_point(data=cbind(cdata, pcdata), 
@@ -68,7 +71,7 @@ get_cluster_data.princomp <- function(model, ...){
 #' 		geom_polygon(data=eldata, 
 #' 			aes(x=x, y=y, colour=factor(cluster), group=cluster), 
 #' 			alpha=0.1)
-get_ellipsoid_data <- function(data, x="x", y="y", cluster="cluster"){
+ellipsoid_data <- function(data, x="x", y="y", cluster="cluster"){
 	get_ellipse <- function(clustn){
 		sdata <- data[data[, cluster]==clustn, c(x, y)]
 		edata <- as.matrix(sdata)
@@ -91,32 +94,34 @@ get_ellipsoid_data <- function(data, x="x", y="y", cluster="cluster"){
 #' @export
 #' @examples
 #' data(iris)
-#' d <- iris[, -5]
+#' iris <- iris[, -5]
 #' # Using kmeans for the clustering
-#' model <- kmeans(d, 3)
-#' plot_cluster(d, model)
+#' plot_cluster(iris, kmeans(iris, 3))
 #' # Using Mclust for the clustering
-#' model <- Mclust(d, 3)
-#' plot_cluster(d, model)
+#' plot_cluster(iris, Mclust(iris, 3))
 plot_cluster <- function(data, model){
 	pc <- princomp(data)
-	cdata <- get_cluster_data(model)
-	pcdata <- get_cluster_data(pc)
+	cdata <- cluster_data(model)
+	pcdata <- cluster_data(pc)
 	eedata <- cbind(cdata, pcdata)
-	eldata <- get_ellipsoid_data(eedata)
+	eldata <- ellipsoid_data(eedata)
 	
 	ggplot() + 
-			geom_point(data=cbind(cdata, pcdata), aes(x=x, y=y, colour=factor(cluster))) +
-			geom_polygon(data=eldata, aes(x=x, y=y, colour=factor(cluster), group=cluster), alpha=0.1)
+			geom_point(
+					data=eedata, 
+					aes(x=x, y=y, colour=factor(cluster))) +
+			geom_polygon(
+					data=eldata, 
+					aes(x=x, y=y, colour=factor(cluster), group=cluster), alpha=0.1)
 }
 
 
 #data(iris)
 #d <- iris[, -5]
 #model <- kmeans(d, 3)
-#cdata <- get_cluster_data(model)
+#cdata <- cluster_data(model)
 #pc <- princomp(d)
-#pcdata <- get_cluster_data(pc)
+#pcdata <- cluster_data(pc)
 #eedata <- cbind(cdata, pcdata)
 #eldata <- get_ellipsoid_data(eedata)
 #

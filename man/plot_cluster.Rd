@@ -9,10 +9,8 @@ customized plots.}
 \arguments{\item{data}{a data frame to be used in clustering}
 \item{model}{a cluster model of class kmeans or Mclust}}
 \examples{data(iris)
-d <- iris[, -5]
+iris <- iris[, -5]
 # Using kmeans for the clustering
-model <- kmeans(d, 3)
-plot_cluster(d, model)
+plot_cluster(iris, kmeans(iris, 3))
 # Using Mclust for the clustering
-model <- Mclust(d, 3)
-plot_cluster(d, model)}
+plot_cluster(iris, Mclust(iris, 3))}

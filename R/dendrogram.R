@@ -1,111 +1,88 @@
 
 ###############################################################################
-
-
-#' Extract data frame from hclust object for plotting using ggplot
+#' Extract line segment and label data from hclust object.
 #' 
-#' Extract data frame from hclust object for plotting using ggplot
+#' Results are stored in a list of data frames containing line segment data and label data.
+#' 
+#' \itemize{
+#' \item {$segments} {a data frame containing the line segment data}
+#' \item {$labels} {a data frame containing the label text data}
+#' }
 #' 
 #' @param x object of class "hclust", e.g. the output of hclust()
-#' @param type The type of plot, indicating the shape of the dendrogram.  "Rectangle" will draw
+#' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
-#' @export
-#' @seealso \code{\link{get_cluster_data}}, \code{\link{get_cluster_labels}}
+#' @S3method cluster_data hclust
+#' @return list
+#' @seealso \code{\link{cluster_data}}
 #' @examples
 #' hc <- hclust(dist(USArrests), "ave")
 #' # Rectangular lines
-#' hcdata <- get_cluster_data(hc, type="rectangle")
-#' ggplot(hcdata) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) + 
-#'  	coord_flip() + scale_y_reverse(expand=c(0.2, 0))
+#' hcdata <- cluster_data(hc, type="rectangle")
+#' ggplot(hcdata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) + 
+#' 		coord_flip() + scale_y_reverse(expand=c(0.2, 0))
 #' # Triangular lines
-#' hcdata <- get_cluster_data(hc, type="triangle")
-#' ggplot(hcdata) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
-get_cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
-  dhc <- as.dendrogram(x)
-  get_cluster_data(dhc, type=type, ...)
-} 
-
-#' Extract labels from hclust object for plotting using ggplot
-#' 
-#' Extract labels from hclust object for plotting using ggplot
-#' 
-#' @param x object of class "hclust", e.g. the output of hclust()
-#' @param type The type of plot, indicating the shape of the dendrogram.  "Rectangle" will draw
-#' rectangular lines, while "triangle" will draw triangular lines.
-#' @param ... ignored
-#' @export
-#' @seealso \code{\link{get_cluster_data}}, \code{\link{get_cluster_labels}}
-#' @examples
-#' hc <- hclust(dist(USArrests), "ave")
-#' hcdata <- get_cluster_data(hc, type="triangle")
-#' hclabels <- get_cluster_labels(hc, type="triangle")
-#' ggplot() + geom_segment(data=hcdata, aes(x=x0, y=y0, xend=x1, yend=y1)) +
-#'   geom_text(data=hclabels, aes(x=x, y=y, label=text), size=3, hjust=0) +
-#'   coord_flip() + scale_y_reverse(expand=c(0.2, 0))
-
-get_cluster_labels.hclust <- function (x, type = c("rectangle", "triangle"), ...){
+#' hcdata <- cluster_data(hc, type="triangle")
+#' ggplot(hcdata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
+cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
 	dhc <- as.dendrogram(x)
-	get_cluster_labels(dhc, type=type, ...)
+	hcdata <- dendrogram_data(dhc, type=type, ...)
+	list(
+			segments = hcdata$segments,
+			labels = hcdata$labels
+	)
 } 
 
-#' Extract data frame from dendrogram object for plotting using ggplot
+#' Extract line segment and label data from dendrogram object.
 #' 
-#' Extract data frame from dendrogram object for plotting using ggplot
+#' Extract line segment and label data from dendrogram object.  Results are stored in a
+#' list of data frames containing line segment data and label data.
+#' 
+#' \itemize{
+#' \item {$segments} {a data frame containing the line segment data}
+#' \item {$labels} {a data frame containing the label text data}
+#' }
 #' 
 #' @param x object of class "dendrogram", e.g. the output of as.dendrogram()
-#' @param type The type of plot, indicating the shape of the dendrogram.  "Rectangle" will draw
+#' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
-#' @seealso \code{\link{get_cluster_data}}, \code{\link{get_cluster_labels}}
-#' @export
+#' @S3method cluster_data dendrogram
+#' @return a list
+#' @seealso \code{\link{cluster_data}}
 #' @examples
 #' hc <- hclust(dist(USArrests), "ave")
-#' d <- as.dendrogram(hc)
+#' dhc <- as.dendrogram(hc)
 #' # Rectangular lines
-#' ddata <- get_cluster_data(d, type="rectangle")
-#' ggplot(ddata) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) + 
-#'   coord_flip() + scale_y_reverse(expand=c(0.2, 0))
-get_cluster_data.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
-	get_dendrogram_data_and_text(x, type, ...)$segments
-} 
-	
-#' Extract data frame from dendrogram object for plotting using ggplot
-#' 
-#' Extract data frame from dendrogram object for plotting using ggplot
-#' 
-#' @param x object of class "dendrogram", e.g. the output of as.dendrogram()
-#' @param type The type of plot, indicating the shape of the dendrogram.  "Rectangle" will draw
-#' rectangular lines, while "triangle" will draw triangular lines.
-#' @param ... ignored
-#' @seealso \code{\link{get_cluster_data.dendrogram}}, 
-#' \code{\link{get_cluster_labels.dendrogram}}
-#' @export
-get_cluster_labels.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
-	get_dendrogram_data_and_text(x, type, ...)$text
-} 
-
-#' Extract data frame from dendrogram object for plotting using ggplot
-#' 
-#' Extract data frame from dendrogram object for plotting using ggplot
-#' 
-#' @param x object of class "dendrogram", e.g. the output of as.dendrogram()
-#' @param type The type of plot, indicating the shape of the dendrogram.  "Rectangle" will draw
-#' rectangular lines, while "triangle" will draw triangular lines.
-#' @param ... ignored
-#' @seealso \code{\link{get_cluster_labels}}
-#' @examples
-#' hc <- hclust(dist(USArrests), "ave")
-#' d <- as.dendrogram(hc)
-#' # Rectangular lines
-#' ddata <- get_cluster_data(d, type="rectangle")
-#' ggplot(ddata) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) + 
-#'   coord_flip() + scale_y_reverse(expand=c(0.2, 0))
+#' ddata <- cluster_data(dhc, type="rectangle")
+#' ggplot(ddata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) + 
+#' 		coord_flip() + scale_y_reverse(expand=c(0.2, 0))
 #' # Triangular lines
-#' ddata <- get_cluster_data(d, type="triangle")
-#' ggplot(ddata) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) +
-#'   coord_flip() + scale_y_reverse(expand=c(0.2, 0))
-get_dendrogram_data_and_text <- function (x, type = c("rectangle", "triangle"), ...){ 
+#' ddata <- cluster_data(dhc, type="triangle")
+#' ggplot(ddata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
+cluster_data.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
+	hcdata <- dendrogram_data(x, type=type, ...)
+	list(
+			segments = hcdata$segments,
+			labels = hcdata$labels
+	)
+} 
+
+
+
+
+#' Extract data frame from dendrogram object for plotting using ggplot
+#' 
+#' Extract data frame from dendrogram object for plotting using ggplot
+#' 
+#' @param x object of class "dendrogram", e.g. the output of as.dendrogram()
+#' @param type The type of plot, indicating the shape of the dendrogram.  "Rectangle" will draw
+#' rectangular lines, while "triangle" will draw triangular lines.
+#' @param ... ignored
+#' @seealso \code{\link{cluster_data}}
+#' @keywords internal
+dendrogram_data <- function (x, type = c("rectangle", "triangle"), ...){ 
 
 	# Initialise variables that used to be in parameter list
 	leaflab <- "perpendicular"
@@ -157,7 +134,7 @@ get_dendrogram_data_and_text <- function (x, type = c("rectangle", "triangle"), 
 	}
 	
 	gg.plotNode <- function (x1, x2, subtree, type, center, leaflab, dLeaf, nodePar, 
-			edgePar, horiz=FALSE, ddsegments=NULL, ddtext=NULL) 
+			edgePar, horiz=FALSE, ddsegments=NULL, ddlabels=NULL) 
 	{
 		inner <- !is.leaf(subtree) && x1 != x2
 		yTop <- attr(subtree, "height")
@@ -197,7 +174,7 @@ get_dendrogram_data_and_text <- function (x, type = c("rectangle", "triangle"), 
 				# *************************
 #			text(X, Y, nodeText, xpd = TRUE, srt = srt, adj = adj, 
 #					cex = lab.cex, col = lab.col, font = lab.font)
-				ddtext <- rbind(ddtext, data.frame(x=X, y=0, text=nodeText))
+				ddlabels <- rbind(ddlabels, data.frame(x=X, y=0, text=nodeText))
 			}
 		}
 		else if (inner) {
@@ -276,16 +253,16 @@ get_dendrogram_data_and_text <- function (x, type = c("rectangle", "triangle"), 
 #				text(mx, my, edgeText, cex = t.cex, col = t.col, font = t.font)
 				}
 				plotNode_result <- gg.plotNode(bx$limit[k], bx$limit[k + 1], subtree = child, 
-						type, center, leaflab, dLeaf, nodePar, edgePar, horiz, ddsegments, ddtext)
+						type, center, leaflab, dLeaf, nodePar, edgePar, horiz, ddsegments, ddlabels)
 				ddsegments <- plotNode_result$segments
-				ddtext <- plotNode_result$text
+				ddlabels <- plotNode_result$labels
 			}
 		}
-		return(list(segments=ddsegments, text=ddtext))
+		return(list(segments=ddsegments, labels=ddlabels))
 	}
 	
 	gg.plotNode(x1, x2, x, type = type, center = center, leaflab = leaflab, 
 			dLeaf = dLeaf, nodePar = nodePar, edgePar = edgePar, horiz=FALSE, 
-			ddsegments=NULL, ddtext=NULL)
+			ddsegments=NULL, ddlabels=NULL)
 }
 
