@@ -9,12 +9,9 @@
 #' This is a set of tools for creating cluster plots, tree plots and dendrograms 
 #' using ggplot()
 #' 
-#' The ggplot philosophy is to clearly separate data from the presentation.
-#' Unfortunately not all cluster algorithms in R makes this clear distinction.
-
-#' ggcluster creates a framework for extracting data and labels from
-#' the various cluster algorithms.  There is one generic function, \code{\link{cluster_data}}
-#' with speficic implementations for:
+#' The ggplot philosophy is to clearly separate data from the presentation.  Unfortunately not all cluster algorithms in R makes this clear distinction.  ggcluster creates a framework for extracting data and labels from the various cluster algorithms.
+#' 
+#' \code{\link{cluster_data}} extracts data from several cluster algorithms.  It is a generic function with specific implementations for:
 #' 
 #' \itemize{
 #' \item hclust: \code{\link{cluster_data.hclust}} 
@@ -24,6 +21,8 @@
 #' \item Mclust: \code{\link{cluster_data.Mclust}} 
 #' }
 #'
+#' \code{\link{plot_cluster}} offers a convenient way of plotting results.
+#' 
 #' @name ggcluster-package
 #' @aliases ggcluster
 #' @docType package
