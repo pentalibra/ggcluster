@@ -6,7 +6,10 @@ S3method(cluster_data, hclust)
 S3method(cluster_data, dendrogram)
 export(cluster_data.princomp)
 export(cluster_data.prcomp)
+<<<<<<< HEAD
 export(cluster_data.factanal)
 export(plot_pca)
+=======
+>>>>>>> 8fa87a461f33ab2fb3deee548d5d82666c94bb35
 export(plot_cluster)
 S3method(cluster_data, tree)
