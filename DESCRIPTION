@@ -1,5 +1,4 @@
 Package: ggcluster
-<<<<<<< HEAD
 Imports:
 Maintainer: Andrie de Vries <andrie.de.vries@pentalibra.com>
 License: GPL (>=2)
@@ -8,12 +7,6 @@ Title: Tools for creating cluster plots, tree plots and dendrograms
 LazyData: true
 LazyLoad: true
 Author: Andrie de Vries <andrie.de.vries@pentalibra.com>
-=======
-Version: 0.0-07
-Date: 2011-03-07
-Title: Tools for creating cluster plots, tree plots and dendrograms
-    using ggplot.
->>>>>>> 8fa87a461f33ab2fb3deee548d5d82666c94bb35
 Description: Most of the cluster in the R packages functions provide
     plot functions for easy plotting of results.  However, it is not
     always easy to extract the underlying data in order to manipulate
@@ -23,22 +16,10 @@ Description: Most of the cluster in the R packages functions provide
     then be manipulated or passed to ggplot() for plotting. The package
     supports data extraction for hclust, dendrogram, tree, kmeans and
     Mclust.
-<<<<<<< HEAD
 Version: 0.0-08
 URL: www.pentalibra.com
 Date: 2011-06-14
 Depends: stats, cluster, tree, plyr, ggplot2, mclust
 Suggests:
-=======
-URL: www.pentalibra.com
-Author: Andrie de Vries <andrie.de.vries@pentalibra.com>
-Maintainer: Andrie de Vries <andrie.de.vries@pentalibra.com>
-Depends: stats, cluster, tree, plyr, ggplot2, mclust
-Suggests:
-Imports:
-License: GPL (>=2)
-LazyLoad: true
-LazyData: true
->>>>>>> 8fa87a461f33ab2fb3deee548d5d82666c94bb35
 Collate: 'cluster.R' 'cluster_data.R' 'dendrogram.R'
     'ggcluster-package.R' 'pca.R' 'plot.R' 'tree.r'

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.21)  14 JUN 2011 16:02
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.21)  16 JUN 2011 14:21
 entering extended mode
 **f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex
 (f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex
@@ -139,8 +139,7 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))))
-No file ggcluster.aux.
+)))) (f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -285,8 +284,8 @@ my insertion and my current dilemma will both disappear.
  [2] [3 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-dendro.pdf>]
 (f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux) ) 
 Here is how much of TeX's memory you used:
- 2143 strings out of 495285
- 29374 string characters out of 3179875
+ 2145 strings out of 495285
+ 29472 string characters out of 3179875
  72714 words of memory out of 3000000
  5320 multiletter control sequences out of 15000+200000
  22306 words of font info for 55 fonts, out of 3000000 for 9000
@@ -303,7 +302,7 @@ eX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX
 2.8/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files (x86)/MiKTeX 
 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.
 8/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ggcluster.pdf (3 pages, 128105 bytes).
+Output written on ggcluster.pdf (3 pages, 128123 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
