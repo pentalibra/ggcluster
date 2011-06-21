@@ -155,6 +155,7 @@ ellipsoid_data <- function(data, x="x", y="y", cluster="cluster", ellipse_quanti
 #' @param yLabel y-axis label
 #' @param pca_function The method for calculating principal components.  Must be either princomp or prcomp
 #' @param ellipse_quantile The quantile for plotting ellipsoids around clusters.  For a value of 1, the ellipsoid will be an ellipsoid-hull, i.e. all points will be included.
+#' @param segment_names Character vector with cluster names
 #' @export
 #' @examples
 #' data(iris)
@@ -171,7 +172,8 @@ plot_cluster <- function(
     xLabel="Component 1", 
     yLabel="Component 2", 
     pca_function=princomp,
-    ellipse_quantile=1){
+    ellipse_quantile=1,
+    segment_names=NULL){
   
   pc <- match.fun(pca_function)(data)
   cdata  <- cluster_data(model)
@@ -179,6 +181,9 @@ plot_cluster <- function(
   #str(cdata)
   #str(pcdata)
   eedata <- cbind(cdata, pcdata)
+  if(!is.null(segment_names)){
+    eedata$cluster <- segment_names[eedata$cluster]
+  }
   eldata <- ellipsoid_data(eedata, ellipse_quantile=ellipse_quantile)
   
   ggplot() + 
