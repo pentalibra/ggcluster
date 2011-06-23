@@ -19,4 +19,5 @@ iris <- iris[, -5]
 plot_cluster(iris, kmeans(iris, 3))
 
 # Using Mclust for the clustering
+require(mclust)
 plot_cluster(iris, Mclust(iris, 3))}

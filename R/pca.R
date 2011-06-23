@@ -1,4 +1,4 @@
-# TODO: Add comment
+# Principal component analysis
 # 
 # Author: Andrie
 ###############################################################################

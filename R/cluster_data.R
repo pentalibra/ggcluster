@@ -1,4 +1,4 @@
-# TODO: Add comment
+# cluster_data function
 # 
 # Author: Andrie
 ###############################################################################

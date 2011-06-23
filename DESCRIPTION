@@ -19,7 +19,7 @@ Description: Most of the cluster in the R packages functions provide
 Version: 0.0-08
 URL: www.pentalibra.com
 Date: 2011-06-14
-Depends: stats, cluster, tree, plyr, ggplot2, mclust
-Suggests:
+Depends: stats, cluster, tree, plyr, ggplot2
+Suggests: mclust
 Collate: 'cluster.R' 'cluster_data.R' 'dendrogram.R'
     'ggcluster-package.R' 'pca.R' 'plot.R' 'tree.r'

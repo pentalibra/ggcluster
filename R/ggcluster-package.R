@@ -1,4 +1,4 @@
-# TODO: Add comment
+# package documentation
 # 
 # Author: Andrie
 ###############################################################################

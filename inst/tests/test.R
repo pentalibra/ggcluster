@@ -143,6 +143,7 @@ test_that("dendrogram plots", {
 		})
 
 test_that("plot_cluster works", {
+      require(mclust)
 			data(iris)
 			iris <- iris[, -5]
 			expect_that(plot_cluster(iris, kmeans(iris, 3)), is_a("ggplot"))

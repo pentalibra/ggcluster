@@ -1,4 +1,4 @@
-## TODO: Add comment
+## Cluster analysis helper functions
 ## 
 ## Author: Andrie
 ################################################################################

@@ -1,4 +1,4 @@
-# TODO: Add comment
+# plot functions
 # 
 # Author: Andrie
 ###############################################################################
@@ -165,6 +165,7 @@ ellipsoid_data <- function(data, x="x", y="y", cluster="cluster", ellipse_quanti
 #' plot_cluster(iris, kmeans(iris, 3))
 #' 
 #' # Using Mclust for the clustering
+#' require(mclust)
 #' plot_cluster(iris, Mclust(iris, 3))
 plot_cluster <- function(
     data, 
