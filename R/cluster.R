@@ -5,28 +5,45 @@
 #
 #
 
-#' Extracts cluster allocation from object of type `kmeans`.
+#' Extracts cluster allocation from object of class `kmeans`.
 #' 
-#' Generic function to extract cluster labels from a model into a data frame.
+#' Extracts the cluster allocation from a \code{\link{kmeans}} analysis into a data.frame
 #' 
 #' @param model object of type kmeans
 #' @param ... ignored
 #' @seealso \code{\link{cluster_data}}, \code{\link{plot_cluster}}
 #' @method cluster_data kmeans
+#' @return
+#' A data frame with the following columns:
+#' \item{cluster}{Cluster allocation}
 #' @export
+#' @examples 
+#' data(iris)
+#' iris <- iris[, -5]
+#' model <- kmeans(iris, 3)
+#' str(cluster_data(model))
 cluster_data.kmeans <- function(model, ...){
 	data.frame(cluster=model$cluster)
 }
 
 #' Extracts cluster allocation from object of type `Mclust`
 #' 
-#' Generic function to extract cluster labels from a model into a data frame
+#' Extracts the cluster allocation from a \code{\link[mclust]{Mclust}} analysis into a data.frame
 #' 
 #' @param model object of type Mclust
 #' @seealso \code{\link{cluster_data}}, \code{\link{plot_cluster}}
 #' @param ... ignored
 #' @method cluster_data Mclust
+#' @return
+#' A data frame with the following columns:
+#' \item{cluster}{Cluster allocation}
 #' @export
+#' @examples 
+#' require(mclust)
+#' data(iris)
+#' iris <- iris[, -5]
+#' model <- Mclust(iris, 3)
+#' str(cluster_data(model))
 cluster_data.Mclust <- function(model, ...){
 	data.frame(cluster=model$classification)
 }

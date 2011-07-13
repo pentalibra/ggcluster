@@ -16,9 +16,9 @@ Description: Most of the cluster in the R packages functions provide
     then be manipulated or passed to ggplot() for plotting. The package
     supports data extraction for hclust, dendrogram, tree, kmeans and
     Mclust.
-Version: 0.0-08
+Version: 0.0-13
 URL: www.pentalibra.com
-Date: 2011-06-14
+Date: 2011-07-13
 Depends: stats, cluster, tree, plyr, ggplot2
 Suggests: mclust
 Collate: 'cluster.R' 'cluster_data.R' 'dendrogram.R'

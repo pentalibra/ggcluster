@@ -4,13 +4,10 @@
 \usage{\method{cluster_data}{hclust} (model, type=c("rectangle", "triangle"),
     ...)}
 \description{Extract line segment and label data from hclust object.}
-\details{Results are stored in a list of data frames containing line segment data and label data.
-
-\itemize{
-\item {$segments} {a data frame containing the line segment data}
-\item {$labels} {a data frame containing the label text data}
-}}
-\value{list}
+\details{Results are stored in a list of data frames containing line segment data and label data.}
+\value{A list with the following elements:
+\item{segments}{Line segment data}
+\item{labels}{Label data}}
 \seealso{\code{\link{cluster_data}}}
 \arguments{\item{model}{object of class "hclust", e.g. the output of hclust()}
 \item{type}{The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw

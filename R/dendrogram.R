@@ -4,18 +4,16 @@
 #' 
 #' Results are stored in a list of data frames containing line segment data and label data.
 #' 
-#' \itemize{
-#' \item {$segments} {a data frame containing the line segment data}
-#' \item {$labels} {a data frame containing the label text data}
-#' }
-#' 
 #' @param model object of class "hclust", e.g. the output of hclust()
 #' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
 #' @method cluster_data hclust
 #' @export 
-#' @return list
+#' @return
+#' A list with the following elements:
+#' \item{segments}{Line segment data}
+#' \item{labels}{Label data}
 #' @seealso \code{\link{cluster_data}}
 #' @examples
 #' hc <- hclust(dist(USArrests), "ave")
@@ -40,18 +38,16 @@ cluster_data.hclust <- function (model, type = c("rectangle", "triangle"), ...){
 #' Extract line segment and label data from dendrogram object.  Results are stored in a
 #' list of data frames containing line segment data and label data.
 #' 
-#' \itemize{
-#' \item {$segments} {a data frame containing the line segment data}
-#' \item {$labels} {a data frame containing the label text data}
-#' }
-#' 
 #' @param model object of class "dendrogram", e.g. the output of as.dendrogram()
 #' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
 #' @method cluster_data dendrogram
 #' @export
-#' @return a list with segments and labels
+#' @return
+#' A list with the following elements:
+#' \item{segments}{Line segment data}
+#' \item{labels}{Label data}
 #' @seealso \code{\link{cluster_data}}
 #' @examples
 #' hc <- hclust(dist(USArrests), "ave")
