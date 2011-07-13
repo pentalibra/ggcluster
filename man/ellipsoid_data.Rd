@@ -1,9 +1,9 @@
 \name{ellipsoid_data}
 \alias{ellipsoid_data}
-\title{Creates ellipsoid from dataframe containing x and y...}
+\title{Creates ellipsoid from dataframe containing x and y .}
 \usage{ellipsoid_data(data, x="x", y="y", cluster="cluster")}
-\description{Creates ellipsoid from dataframe containing x and y}
-\details{Generic function to extract cluster labels from a model into a data frame}
+\description{Creates ellipsoid from dataframe containing x and y .}
+\details{Generic function to extract cluster labels from a model into a data frame.}
 \seealso{\code{\link{cluster_data}}, \code{\link{plot_cluster}}}
 \arguments{\item{data}{A data frame containing at least three columns: x, y and cluster.
 x and y represent the plotting coordinates, and cluster is the cluster allocation.}

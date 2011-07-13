@@ -4,7 +4,7 @@
 ###############################################################################
 
 
-#' Extracts primary principal components from object of type `princomp`
+#' Extracts primary principal components from object of type `princomp`.
 #' 
 #' Generic function to extract cluster labels from a model into a data frame
 #' 
@@ -19,7 +19,7 @@ cluster_data.princomp <- function(model, ...){
 	)
 }
 
-#' Extracts primary principal components from object of type `prcomp`
+#' Extracts primary principal components from object of type `prcomp`.
 #' 
 #' Generic function to extract cluster labels from a model into a data frame
 #' 
@@ -34,7 +34,7 @@ cluster_data.prcomp <- function(model, ...){
 	)
 }
 
-#' Extracts primary principal components from object of type `factanal`
+#' Extracts primary principal components from object of type `factanal`.
 #' 
 #' Generic function to extract cluster labels from a model into a data frame
 #' 

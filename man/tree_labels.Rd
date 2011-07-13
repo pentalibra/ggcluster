@@ -1,8 +1,8 @@
 \name{tree_labels}
 \alias{tree_labels}
-\title{Extract labels data frame from tree object for plotting using ggplot...}
+\title{Extract labels data frame from tree object for plotting using ggplot.}
 \usage{tree_labels(model, ...)}
-\description{Extract labels data frame from tree object for plotting using ggplot}
+\description{Extract labels data frame from tree object for plotting using ggplot.}
 \details{Extract labels data frame from tree object for plotting using ggplot}
 \value{a list with two elements: $labels and $leaf_labels}
 \keyword{internal}

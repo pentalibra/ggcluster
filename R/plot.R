@@ -3,7 +3,7 @@
 # Author: Andrie
 ###############################################################################
 
-#' Calculate pca fit loadings
+#' Calculate pca fit loadings.
 #' 
 #' @param x Cluster model, e.g. the results of kmeans
 #' @param labels_at_edge Indicates whether labels are at edge of graph or next to poit
@@ -48,7 +48,7 @@ pca_fit_loadings <- function(x, labels_at_edge, explode){
 
 ###############################################################################
 
-#' Create principal components analysis plot
+#' Create principal components analysis plot.
 #' 
 #' @param data The data used for clustering
 #' @param labeltext The labels to use for each column in the data.  Defaults to names(data).
@@ -118,7 +118,7 @@ plot_pca <- function(data,
 
 ###############################################################################
 
-#' Calculates ellipsoid data for use in plot_cluster
+#' Calculates ellipsoid data for use in plot_cluster.
 #' 
 #' @param data
 #' @param x
@@ -145,7 +145,7 @@ plot_pca <- function(data,
 
 ###############################################################################
 
-#' Convenience function to create a cluster plot using either kmeans or Mclust 
+#' Convenience function to create a cluster plot using either kmeans or Mclust. 
 #' 
 #' This function creates a cluster plot of the cluster data point on the first two axes of a principal component analysis.  An ellipsoid-hull is fitted round each cluster. 
 #' 

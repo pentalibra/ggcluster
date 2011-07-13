@@ -5,9 +5,9 @@
 #
 #
 
-#' Extracts cluster allocation from object of type `kmeans`
+#' Extracts cluster allocation from object of type `kmeans`.
 #' 
-#' Generic function to extract cluster labels from a model into a data frame
+#' Generic function to extract cluster labels from a model into a data frame.
 #' 
 #' @param model object of type kmeans
 #' @param ... ignored
@@ -34,9 +34,9 @@ cluster_data.Mclust <- function(model, ...){
 
 
 
-#' Creates ellipsoid from dataframe containing x and y 
+#' Creates ellipsoid from dataframe containing x and y .
 #' 
-#' Generic function to extract cluster labels from a model into a data frame
+#' Generic function to extract cluster labels from a model into a data frame.
 #' 
 #' @param data A data frame containing at least three columns: x, y and cluster.
 #' x and y represent the plotting coordinates, and cluster is the cluster allocation.

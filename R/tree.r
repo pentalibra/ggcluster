@@ -15,7 +15,8 @@
 #' 
 #' @param model object of class "tree", e.g. the output of tree()
 #' @param ... ignored
-#' @S3method cluster_data tree
+#' @method cluster_data tree
+#' @export
 #' @return a list
 #' @seealso \code{\link{cluster_data}}
 #' @examples
@@ -82,7 +83,7 @@ cluster_segments.tree <- function(model, ...){
 	rbind(linev[-1,], lineh[-1,])
 }
 
-#' Extract labels data frame from tree object for plotting using ggplot
+#' Extract labels data frame from tree object for plotting using ggplot.
 #' 
 #' Extract labels data frame from tree object for plotting using ggplot
 #' 
@@ -124,7 +125,7 @@ tree_labels <- function(model, ...){
 	)
 }
 
-#' Extract labels data frame from tree object for plotting using ggplot
+#' Extract labels data frame from tree object for plotting using ggplot.
 #' 
 #' Extract labels data frame from tree object for plotting using ggplot
 #' 

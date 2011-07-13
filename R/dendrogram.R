@@ -9,7 +9,7 @@
 #' \item {$labels} {a data frame containing the label text data}
 #' }
 #' 
-#' @param x object of class "hclust", e.g. the output of hclust()
+#' @param model object of class "hclust", e.g. the output of hclust()
 #' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
@@ -26,8 +26,8 @@
 #' # Triangular lines
 #' hcdata <- cluster_data(hc, type="triangle")
 #' ggplot(hcdata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
-cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
-	dhc <- as.dendrogram(x)
+cluster_data.hclust <- function (model, type = c("rectangle", "triangle"), ...){
+	dhc <- as.dendrogram(model)
 	hcdata <- .dendrogram_data(dhc, type=type, ...)
 	list(
 			segments = hcdata$segments,
@@ -45,7 +45,7 @@ cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
 #' \item {$labels} {a data frame containing the label text data}
 #' }
 #' 
-#' @param x object of class "dendrogram", e.g. the output of as.dendrogram()
+#' @param model object of class "dendrogram", e.g. the output of as.dendrogram()
 #' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
@@ -63,8 +63,8 @@ cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
 #' # Triangular lines
 #' ddata <- cluster_data(dhc, type="triangle")
 #' ggplot(ddata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
-cluster_data.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
-	hcdata <- .dendrogram_data(x, type=type, ...)
+cluster_data.dendrogram <- function (model, type = c("rectangle", "triangle"), ...){
+	hcdata <- .dendrogram_data(model, type=type, ...)
 	list(
 			segments = hcdata$segments,
 			labels = hcdata$labels
@@ -74,7 +74,7 @@ cluster_data.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
 
 
 
-#' Extract data frame from dendrogram object for plotting using ggplot
+#' Extract data frame from dendrogram object for plotting using ggplot.
 #' 
 #' Extract data frame from dendrogram object for plotting using ggplot
 #' 

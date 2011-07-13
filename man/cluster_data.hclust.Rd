@@ -1,7 +1,8 @@
 \name{cluster_data.hclust}
 \alias{cluster_data.hclust}
 \title{Extract line segment and label data from hclust object.}
-\usage{\method{cluster_data}{hclust} (x, type=c("rectangle", "triangle"), ...)}
+\usage{\method{cluster_data}{hclust} (model, type=c("rectangle", "triangle"),
+    ...)}
 \description{Extract line segment and label data from hclust object.}
 \details{Results are stored in a list of data frames containing line segment data and label data.
 
@@ -11,7 +12,7 @@
 }}
 \value{list}
 \seealso{\code{\link{cluster_data}}}
-\arguments{\item{x}{object of class "hclust", e.g. the output of hclust()}
+\arguments{\item{model}{object of class "hclust", e.g. the output of hclust()}
 \item{type}{The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 rectangular lines, while "triangle" will draw triangular lines.}
 \item{...}{ignored}}
