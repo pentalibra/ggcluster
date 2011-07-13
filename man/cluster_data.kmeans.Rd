@@ -3,7 +3,7 @@
 \title{Extracts cluster allocation from object of class `kmeans`.}
 \usage{\method{cluster_data}{kmeans} (model, ...)}
 \description{Extracts cluster allocation from object of class `kmeans`.}
-\details{Extracts the cluster allocation from a \code{\link{kmeans}} analysis into data.frame}
+\details{Extracts the cluster allocation from a \code{\link{kmeans}} analysis into a data.frame}
 \seealso{\code{\link{cluster_data}}, \code{\link{plot_cluster}}}
 \value{A data frame with the following columns:
 \item{cluster}{Cluster allocation}}
