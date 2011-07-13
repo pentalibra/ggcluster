@@ -79,7 +79,7 @@ plot_pca <- function(data,
 # print(fit.l)
   
   p <- ggplot(data=fit.l)
-  p <- p + geom_segment(aes(x=0, y=0, xend=Comp1, yend=Comp2, alpha = Dist),
+  p <- p + geom_segment(aes_string(x=0, y=0, xend="Comp1", yend="Comp2", alpha="Dist"),
       arrow=arrow(length=unit(0.1,"cm")))#, colour="grey50")
   if(labels_at_edge){
     p <- p + geom_text(aes_string(
@@ -126,7 +126,7 @@ plot_pca <- function(data,
 #' @param cluster
 #' @param ellipse_quantile
 #' @keywords internal
-ellipsoid_data <- function(data, x="x", y="y", cluster="cluster", ellipse_quantile=0.67){
+.ellipsoid_data <- function(data, x="x", y="y", cluster="cluster", ellipse_quantile=0.67){
   centroid_distance <- function(xr, xc){sqrt(sum((xc-xr)^2))}
   get_ellipse <- function(clustn){
     sdata <- data[data[, cluster]==clustn, c(x, y)]
@@ -185,22 +185,23 @@ plot_cluster <- function(
   if(!is.null(segment_names)){
     eedata$cluster <- segment_names[eedata$cluster]
   }
-  eldata <- ellipsoid_data(eedata, ellipse_quantile=ellipse_quantile)
+  eldata <- .ellipsoid_data(eedata, ellipse_quantile=ellipse_quantile)
   
   ggplot() + 
       geom_point(
           data = eedata, 
-          aes(x = x, 
-              y = y, 
-              colour = factor(cluster), 
-              group = factor(cluster))) + 
+          aes_string(
+              x = "x", 
+              y = "y", 
+              colour = "factor(cluster)", 
+              group = "factor(cluster)")) + 
       geom_polygon(
           data = eldata, 
-          aes(
-              x = x, 
-              y = y, 
-              group = factor(cluster), 
-              colour = factor(cluster)), 
+          aes_string(
+              x = "x", 
+              y = "y", 
+              group = "factor(cluster)", 
+              colour = "factor(cluster)"), 
           alpha = 0.1) +
       labs(
           x=xLabel,
@@ -216,7 +217,7 @@ plot_cluster <- function(
 #	cdata <- cluster_data(model)
 #	pcdata <- cluster_data(pc)
 #	eedata <- cbind(cdata, pcdata)
-#	eldata <- ellipsoid_data(eedata)
+#	eldata <- .ellipsoid_data(eedata)
 #	
 #	ggplot() + 
 #			geom_point(

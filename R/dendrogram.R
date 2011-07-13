@@ -13,7 +13,8 @@
 #' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
-#' @S3method cluster_data hclust
+#' @method cluster_data hclust
+#' @export 
 #' @return list
 #' @seealso \code{\link{cluster_data}}
 #' @examples
@@ -27,7 +28,7 @@
 #' ggplot(hcdata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
 cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
 	dhc <- as.dendrogram(x)
-	hcdata <- dendrogram_data(dhc, type=type, ...)
+	hcdata <- .dendrogram_data(dhc, type=type, ...)
 	list(
 			segments = hcdata$segments,
 			labels = hcdata$labels
@@ -48,8 +49,9 @@ cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
 #' @param type The type of plot, indicating the shape of the dendrogram.  "rectangle" will draw
 #' rectangular lines, while "triangle" will draw triangular lines.
 #' @param ... ignored
-#' @S3method cluster_data dendrogram
-#' @return a list
+#' @method cluster_data dendrogram
+#' @export
+#' @return a list with segments and labels
 #' @seealso \code{\link{cluster_data}}
 #' @examples
 #' hc <- hclust(dist(USArrests), "ave")
@@ -62,7 +64,7 @@ cluster_data.hclust <- function (x, type = c("rectangle", "triangle"), ...){
 #' ddata <- cluster_data(dhc, type="triangle")
 #' ggplot(ddata$segments) + geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1))
 cluster_data.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
-	hcdata <- dendrogram_data(x, type=type, ...)
+	hcdata <- .dendrogram_data(x, type=type, ...)
 	list(
 			segments = hcdata$segments,
 			labels = hcdata$labels
@@ -82,7 +84,7 @@ cluster_data.dendrogram <- function (x, type = c("rectangle", "triangle"), ...){
 #' @param ... ignored
 #' @seealso \code{\link{cluster_data}}
 #' @keywords internal
-dendrogram_data <- function (x, type = c("rectangle", "triangle"), ...){ 
+.dendrogram_data <- function (x, type = c("rectangle", "triangle"), ...){ 
 
 	# Initialise variables that used to be in parameter list
 	leaflab <- "perpendicular"

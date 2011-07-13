@@ -1,7 +1,7 @@
 \name{cluster_data.hclust}
 \alias{cluster_data.hclust}
 \title{Extract line segment and label data from hclust object.}
-\usage{cluster_data.hclust(x, type=c("rectangle", "triangle"), ...)}
+\usage{\method{cluster_data}{hclust} (x, type=c("rectangle", "triangle"), ...)}
 \description{Extract line segment and label data from hclust object.}
 \details{Results are stored in a list of data frames containing line segment data and label data.
 

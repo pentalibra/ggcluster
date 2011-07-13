@@ -30,5 +30,9 @@
 #' @author Andrie de Vries \email{andrie.de.vries@@pentalibra.com}
 #' @keywords package
 #' @seealso \code{\link{cluster_data}}
-
 NULL
+
+.onLoad <- function(libname, pkgname){
+  message <- "The ggcluster package is experimental:\nWarning: Function syntax may change in future versions.\n"
+  packageStartupMessage(message)
+}  

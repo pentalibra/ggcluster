@@ -151,3 +151,8 @@ test_that("plot_cluster works", {
 			
 		})
 
+context("cluster_data default")
+
+test_that("undefined model type throws error", {
+      expect_that(cluster_data(USArrests), throws_error())
+    })

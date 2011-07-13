@@ -16,6 +16,7 @@
 #' 
 #' @param model object of type hclust, dendrogram, tree or kmeans
 #' @param ... ignored
+#' @method cluster_data default
 #' @export
 #' @return a list of data frames that contain the data appropriate to each cluster model
 #' @seealso 
@@ -32,3 +33,7 @@ cluster_data <- function(model, ...){
 	UseMethod("cluster_data", model)
 }
 
+cluster_data.default <- function(model, ...){
+  x <- class(model)
+  stop(paste("No cluster_data method defined for class", x))
+}

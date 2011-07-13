@@ -12,6 +12,7 @@
 #' @param model object of type kmeans
 #' @param ... ignored
 #' @seealso \code{\link{cluster_data}}, \code{\link{plot_cluster}}
+#' @method cluster_data kmeans
 #' @export
 cluster_data.kmeans <- function(model, ...){
 	data.frame(cluster=model$cluster)
@@ -24,6 +25,7 @@ cluster_data.kmeans <- function(model, ...){
 #' @param model object of type Mclust
 #' @seealso \code{\link{cluster_data}}, \code{\link{plot_cluster}}
 #' @param ... ignored
+#' @method cluster_data Mclust
 #' @export
 cluster_data.Mclust <- function(model, ...){
 	data.frame(cluster=model$classification)

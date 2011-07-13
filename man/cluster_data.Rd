@@ -1,7 +1,7 @@
 \name{cluster_data}
 \alias{cluster_data}
 \title{Extract cluster data from a model into a list of data frames.}
-\usage{cluster_data(model, ...)}
+\usage{\method{cluster_data}{default} (model, ...)}
 \description{Extract cluster data from a model into a list of data frames.}
 \details{This function provides a generic mechanism to extract relevant plotting data, 
 typically line segments and labels, from a variety of cluster models.
