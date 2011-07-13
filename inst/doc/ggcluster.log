@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.21)  13 JUL 2011 08:23
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.21)  13 JUL 2011 13:44
 entering extended mode
 **f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex
 (f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex
@@ -140,24 +140,24 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))) (f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 21.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    ... okay on input line 21.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count91
@@ -171,23 +171,23 @@ LaTeX Font Info:    ... okay on input line 20.
 \MPnumerator=\count95
 \everyMPtoPDFconversion=\toks16
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 22.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 23.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 22.
+(Font)              <12> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 22.
+(Font)              <8> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 22.
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 26.
+(Font)              <6> on input line 23.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 27.
 ("C:/Program Files/R/R-2.13.0/share/texmf/tex/latex\ts1aer.fd"
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 26.
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:36: Undefined control seque
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 27.
+f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:37: Undefined control seque
 nce
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -195,116 +195,37 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:38: Missing $ inserted
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 38.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 38.
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:38: Extra }, or forgotten $
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:39: Missing $ inserted
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:39: Missing } inserted
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (400.84195pt too wide) in paragraph at lines 38--39
-[]\T1/aer/m/n/10 It does this by pro-vid-ing generic func-tion \T1/aett/m/n/10 
-cluster$[]\OML/cmm/m/it/10 ata\OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 thatwillextrac
-ttheappropriateclusterdataaswellaslabels:Thisdataisreturnedasalistofdata:frames
-:Thesedataframescan[]$ 
- []
-
  [1
 
-{C:/Users/Andrie/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}]
-<ggcluster-dendro.pdf, id=15, 433.62pt x 433.62pt>
-File: ggcluster-dendro.pdf Graphic file (type pdf)
-
-<use ggcluster-dendro.pdf>
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:73: Missing $ inserted
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:73: Extra }, or forgotten $
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:73: Extra }, or forgotten $
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:73: Missing $ inserted
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:73: Missing } inserted
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex:73: Missing } inserted
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
- [2] [3 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-dendro.pdf>]
-(f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux) ) 
+{C:/Users/Andrie/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}] <ggcluster
+-dendro1.pdf, id=13, 289.08pt x 216.81pt>
+File: ggcluster-dendro1.pdf Graphic file (type pdf)
+ <use ggcluster-dendro1.pdf> <ggcluster-dendro2.pdf, id=14, 289.08pt x 216.81pt
+>
+File: ggcluster-dendro2.pdf Graphic file (type pdf)
+ <use ggcluster-dendro2.pdf> [2 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-
+dendro1.pdf>] [3 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-dendro2.pdf>] (
+f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux) ) 
 Here is how much of TeX's memory you used:
  2145 strings out of 495285
- 29472 string characters out of 3179875
- 72714 words of memory out of 3000000
+ 29536 string characters out of 3179875
+ 72731 words of memory out of 3000000
  5320 multiletter control sequences out of 15000+200000
- 22306 words of font info for 55 fonts, out of 3000000 for 9000
+ 21970 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 35i,6n,22p,428b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Andrie\AppData\
-Local\MiKTeX\2.8\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program Fil
-es (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files
- (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (
-x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86
-)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/M
-iKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKT
-eX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 
-2.8/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files (x86)/MiKTeX 
-2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.
-8/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ggcluster.pdf (3 pages, 128538 bytes).
+ 35i,6n,21p,428b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Andrie\AppData\L
+ocal\MiKTeX\2.8\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program File
+s (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/
+MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiK
+TeX 2.8/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files (x86)/MiK
+TeX 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ggcluster.pdf (3 pages, 130950 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
