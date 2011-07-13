@@ -47,7 +47,7 @@ library(ggcluster)
 
 The \code{hclust()} and \code{dendrogram()} functions in R makes it easy to plot the results of hierarchical cluster analysis and other dendrograms in R.  However, it is hard to extract the data from this analysis to customise these plots, since the \code{plot()} functions for both these classes prints directly without the option of returning the plot data.  
 
-<<dendro1, fig=TRUE, width=4, height=3, include=FALSE>>=
+<<dendro1, fig=TRUE, width=4, height=2, include=FALSE>>=
 hc <- hclust(dist(USArrests), "ave")
 dhc <- as.dendrogram(hc)
 # Rectangular lines
@@ -58,19 +58,19 @@ p <- ggplot(ddata$segments) +
 print(p)
 @
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 {
-\includegraphics[width=4in, height=3in]{ggcluster-dendro1}
+\includegraphics[width=4in, height=2in]{ggcluster-dendro1}
 }
 \end{center}
 \caption{A dendrogram produced using \clusterdata{} and \code{ggplot()}}
 \end{figure}
 
 
-Of course, using ggplot to creat the dendogram means one has full control over the appearance of the plot.  For example, here is the same data, but this time plotted horizontally with a clean background:
+Of course, using ggplot to create the dendrogram means one has full control over the appearance of the plot.  For example, here is the same data, but this time plotted horizontally with a clean background:
 
-<<dendro2, fig=TRUE, width=4, height=3, include=FALSE>>=
+<<dendro2, fig=TRUE, width=4, height=2, include=FALSE>>=
 p <- p + coord_flip() +
   opts(
     panel.grid.major = theme_blank(),
@@ -85,13 +85,72 @@ p <- p + coord_flip() +
 print(p)
 @
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 {
-\includegraphics[width=4in, height=3in]{ggcluster-dendro2}
+\includegraphics[width=4in, height=2in]{ggcluster-dendro2}
 }
 \end{center}
 \caption{Dendrogram rotated on clear background}
+\end{figure}
+
+Dendrograms can also be drawn using triangular lines instead of rectangular lines.  For example:
+
+<<dendro3, fig=TRUE, width=4, height=2, include=FALSE>>=
+ddata <- cluster_data(dhc, type="triangle")
+p <- ggplot(ddata$segments) + 
+    geom_segment(aes(x=x0, y=y0, xend=x1, yend=y1)) + 
+    coord_flip() + scale_y_reverse(expand=c(0.2, 0)) +
+    opts(
+        panel.grid.major = theme_blank(),
+        panel.grid.minor = theme_blank(),
+        panel.background = theme_blank(),
+        axis.title.x = theme_text(colour=NA),
+        axis.title.y = theme_blank(),
+        axis.text.x = theme_blank(),
+        axis.text.y = theme_blank(),
+        axis.line = theme_blank()
+    )  
+print(p)
+@
+
+\begin{figure}[h]
+\begin{center}
+{
+\includegraphics[width=4in, height=2in]{ggcluster-dendro3}
+}
+\end{center}
+\caption{A dendrogram with triangular connection lines}
+\end{figure}
+
+  
+
+\section{Tree diagrams}
+
+\ggcluster{} can also deal with tree plots.
+
+<<tree1, fig=TRUE, width=4, height=3, include=FALSE>>=
+data(cpus, package="MASS")
+cpus.ltr <- tree(log10(perf) ~ syct+mmin+mmax+cach+chmin+chmax, cpus)
+tree_data <- cluster_data(cpus.ltr)
+p <- ggplot(tree_data$segments) +
+    geom_segment(aes(x=x, y=y, xend=xend, yend=yend, size=n), 
+        colour="blue", alpha=0.5) +
+    scale_size("n", to=c(0, 3)) +
+    geom_text(data=tree_data$labels, 
+        aes(x=x, y=y, label=label), vjust=-0.5, size=3) +
+    geom_text(data=tree_data$leaf_labels, 
+        aes(x=x, y=y, label=label), vjust=0.5, size=2)
+print(p)
+@
+
+\begin{figure}[h]
+\begin{center}
+{
+\includegraphics[width=4in, height=3in]{ggcluster-tree1}
+}
+\end{center}
+\caption{Tree plot}
 \end{figure}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.21)  13 JUL 2011 13:44
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.21)  13 JUL 2011 17:15
 entering extended mode
 **f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex
 (f:/git/ggcluster/ggcluster/inst/doc/./ggcluster.tex
@@ -198,34 +198,51 @@ and I'll forget about whatever was undefined.
  [1
 
 {C:/Users/Andrie/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}] <ggcluster
--dendro1.pdf, id=13, 289.08pt x 216.81pt>
+-dendro1.pdf, id=13, 289.08pt x 144.54pt>
 File: ggcluster-dendro1.pdf Graphic file (type pdf)
- <use ggcluster-dendro1.pdf> <ggcluster-dendro2.pdf, id=14, 289.08pt x 216.81pt
+ <use ggcluster-dendro1.pdf> <ggcluster-dendro2.pdf, id=14, 289.08pt x 144.54pt
 >
 File: ggcluster-dendro2.pdf Graphic file (type pdf)
- <use ggcluster-dendro2.pdf> [2 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-
-dendro1.pdf>] [3 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-dendro2.pdf>] (
-f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux) ) 
+ <use ggcluster-dendro2.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+ <ggcluster-dendro3.pdf, id=15, 289.08pt x 144.54pt>
+File: ggcluster-dendro3.pdf Graphic file (type pdf)
+ <use ggcluster-dendro3.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+ [2 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-dendro1.pdf>] <ggcluster-tre
+e1.pdf, id=24, 289.08pt x 216.81pt>
+File: ggcluster-tree1.pdf Graphic file (type pdf)
+ <use ggcluster-tree1.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+ [3 <f:/git/ggcluster/ggcluster/inst/doc/ggcluster-dendro2.pdf> <f:/git/ggclust
+er/ggcluster/inst/doc/ggcluster-dendro3.pdf>] [4 <f:/git/ggcluster/ggcluster/in
+st/doc/ggcluster-tree1.pdf>] (f:\git\ggcluster\ggcluster\inst\doc\ggcluster.aux
+) ) 
 Here is how much of TeX's memory you used:
- 2145 strings out of 495285
- 29536 string characters out of 3179875
- 72731 words of memory out of 3000000
- 5320 multiletter control sequences out of 15000+200000
+ 2155 strings out of 495285
+ 29774 string characters out of 3179875
+ 73731 words of memory out of 3000000
+ 5328 multiletter control sequences out of 15000+200000
  21970 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  35i,6n,21p,428b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Andrie\AppData\L
-ocal\MiKTeX\2.8\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program File
-s (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files 
-(x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x8
-6)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/
-MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiK
-TeX 2.8/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files (x86)/MiK
-TeX 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTe
-X 2.8/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ggcluster.pdf (3 pages, 130950 bytes).
+ <C:\Users\Andrie\AppData\Local\MiKTeX\2.8\fonts\pk\ljfour\jknappen\ec\dpi60
+0\tcrm1000.pk><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsltt10.p
+fb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ggcluster.pdf (4 pages, 172322 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
