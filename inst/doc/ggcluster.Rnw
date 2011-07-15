@@ -130,6 +130,7 @@ print(p)
 \ggcluster{} can also deal with tree plots.
 
 <<tree1, fig=TRUE, width=4, height=3, include=FALSE>>=
+require(tree)
 data(cpus, package="MASS")
 cpus.ltr <- tree(log10(perf) ~ syct+mmin+mmax+cach+chmin+chmax, cpus)
 tree_data <- cluster_data(cpus.ltr)

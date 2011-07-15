@@ -57,6 +57,15 @@ pca_fit_loadings <- function(x, labels_at_edge, explode){
 #' @param pca_function The function to use for principal component analysis.  This could be \code{\link{princomp}}, \code{\link{prcomp}} or \code{\link{factanal}}.
 #' @param labels_at_edge If TRUE, labels are printed at at edge of plot, otherwise labels are printed next to each point.
 #' @param explode A multiplication factor that determines the distance of each label from the point.  If over-plotting of labels is a problem, then use a larger explode factor.
+#' @usage
+#' plot_pca(
+#' data, 
+#' labeltext = names(data), 
+#' xLabel = "Principal component 1", 
+#' yLabel = "Principal component 2", 
+#' pca_function = princomp, 
+#' labels_at_edge = TRUE,
+#' explode = 1.1, textsize = 3)
 #' @param textsize Font size
 #' @export 
 plot_pca <- function(data,
@@ -127,6 +136,8 @@ plot_pca <- function(data,
 #' @param ellipse_quantile
 #' @keywords internal
 .ellipsoid_data <- function(data, x="x", y="y", cluster="cluster", ellipse_quantile=0.67){
+  require(plyr)
+  require(cluster) #for ellipsoidhull and predict
   centroid_distance <- function(xr, xc){sqrt(sum((xc-xr)^2))}
   get_ellipse <- function(clustn){
     sdata <- data[data[, cluster]==clustn, c(x, y)]
@@ -176,6 +187,7 @@ plot_cluster <- function(
     ellipse_quantile=1,
     segment_names=NULL){
   
+  require(ggplot2)
   pc <- match.fun(pca_function)(data)
   cdata  <- cluster_data(model)
   pcdata <- cluster_data(pc)

@@ -28,6 +28,7 @@
 #' @docType package
 #' @title Tools for creating cluster plots, tree plots and dendrograms using ggplot in [R]
 #' @author Andrie de Vries \email{andrie.de.vries@@pentalibra.com}
+#' @li
 #' @keywords package
 #' @seealso \code{\link{cluster_data}}
 NULL

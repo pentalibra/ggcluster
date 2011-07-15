@@ -1,25 +1,40 @@
 Package: ggcluster
-Imports:
-Maintainer: Andrie de Vries <andrie.de.vries@pentalibra.com>
+Maintainer: Andrie de Vries
+    <andrie.de.vries@pentalibra.com>
 License: GPL (>=2)
-Title: Tools for creating cluster plots, tree plots and dendrograms
-    using ggplot.
+Title: Tools for creating cluster plots, tree plots and
+    dendrograms using ggplot.
 LazyData: true
 LazyLoad: true
 Author: Andrie de Vries <andrie.de.vries@pentalibra.com>
-Description: Most of the cluster in the R packages functions provide
-    plot functions for easy plotting of results.  However, it is not
-    always easy to extract the underlying data in order to manipulate
-    these plots. The ggcluster packages addresses this problem by
-    making available a series of methods to extract the plot segment as
-    well as data labels available in data frame format. This data can
-    then be manipulated or passed to ggplot() for plotting. The package
-    supports data extraction for hclust, dendrogram, tree, kmeans and
+Description: Most of the cluster in the R packages
+    functions provide plot functions for easy plotting of
+    results. However, it is not always easy to extract the
+    underlying data in order to manipulate these plots. The
+    ggcluster packages addresses this problem by making
+    available a series of methods to extract the plot
+    segment as well as data labels available in data frame
+    format. This data can then be manipulated or passed to
+    ggplot() for plotting. The package supports data
+    extraction for hclust, dendrogram, tree, kmeans and
     Mclust.
-Version: 0.0-13
+Version: 0.0-15
 URL: www.pentalibra.com
-Date: 2011-07-13
-Depends: stats, cluster, tree, plyr, ggplot2
-Suggests: mclust
-Collate: 'cluster.R' 'cluster_data.R' 'dendrogram.R'
-    'ggcluster-package.R' 'pca.R' 'plot.R' 'tree.r'
+Date: 2011-07-15
+Depends:
+    stats,
+    cluster
+Suggests:
+    tree,
+    mclust,
+    plyr,
+    ggplot2
+Collate:
+    'cluster_data.R'
+    'dendrogram.R'
+    'ggcluster-package.R'
+    'pca.R'
+    'plot.R'
+    'tree.r'
+    'kmeans.R'
+    'mclust.R'

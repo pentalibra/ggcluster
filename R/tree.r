@@ -20,6 +20,8 @@
 #' @return a list
 #' @seealso \code{\link{cluster_data}}
 #' @examples
+#' require(tree)
+#' require(ggplot2)
 #' data(cpus, package="MASS")
 #' cpus.ltr <- tree(log10(perf) ~ syct+mmin+mmax+cach+chmin+chmax, cpus)
 #' tree_data <- cluster_data(cpus.ltr)
@@ -52,6 +54,8 @@ cluster_data.tree <- function(model, ...){
 #' @keywords internal
 #' @seealso \code{\link{cluster_data.tree}}
 #' @examples
+#' require(tree)
+#' require(ggplot2)
 #' data(cpus, package="MASS")
 #' cpus.ltr <- tree(log10(perf) ~ syct+mmin+mmax+cach+chmin+chmax, cpus)
 #' tree_data <- cluster_data(cpus.ltr)
@@ -134,7 +138,7 @@ tree_labels <- function(model, ...){
 #' @keywords internal
 #' @seealso \code{\link{cluster_data}}
 get_data_tree_leaf_labels <- function(model, ...){
-  #require(tree)
+  require(tree)
   # Uses tree:::treeco to extract data frame of plot locations
   xy <- tree:::treeco(model)
   label <- model$frame$var
@@ -155,13 +159,5 @@ get_data_tree_leaf_labels <- function(model, ...){
   data
 }
 
-
-
-################
-# Example code #
-################
-
-#library(ggplot2)
-#library(tree)
 
 

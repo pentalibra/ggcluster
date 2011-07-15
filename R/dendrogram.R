@@ -16,6 +16,7 @@
 #' \item{labels}{Label data}
 #' @seealso \code{\link{cluster_data}}
 #' @examples
+#' require(ggplot2)
 #' hc <- hclust(dist(USArrests), "ave")
 #' # Rectangular lines
 #' hcdata <- cluster_data(hc, type="rectangle")
@@ -50,6 +51,7 @@ cluster_data.hclust <- function (model, type = c("rectangle", "triangle"), ...){
 #' \item{labels}{Label data}
 #' @seealso \code{\link{cluster_data}}
 #' @examples
+#' require(ggplot2)
 #' hc <- hclust(dist(USArrests), "ave")
 #' dhc <- as.dendrogram(hc)
 #' # Rectangular lines
