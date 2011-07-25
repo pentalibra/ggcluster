@@ -3,8 +3,8 @@
 \title{Create principal components analysis plot.}
 \usage{
   plot_pca( data, labeltext = names(data), xLabel =
-  "Principal component 1", yLabel = "Principal component
-  2", pca_function = princomp, labels_at_edge = TRUE,
+  "Principal component 1", yLabel = "Principal component 2",
+  pca_function = princomp, labels_at_edge = TRUE,
   explode = 1.1, textsize = 3)
 }
 \arguments{
@@ -31,7 +31,8 @@
   over-plotting of labels is a problem, then use a larger
   explode factor.}
 
-  \item{textsize}{Font size}
+  \item{textsize}{Text label size passed to
+  \code{\link[ggplot2]{geom_text}}}
 }
 \description{
   Create principal components analysis plot.

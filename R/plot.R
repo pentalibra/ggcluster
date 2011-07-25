@@ -57,6 +57,7 @@ pca_fit_loadings <- function(x, labels_at_edge, explode){
 #' @param pca_function The function to use for principal component analysis.  This could be \code{\link{princomp}}, \code{\link{prcomp}} or \code{\link{factanal}}.
 #' @param labels_at_edge If TRUE, labels are printed at at edge of plot, otherwise labels are printed next to each point.
 #' @param explode A multiplication factor that determines the distance of each label from the point.  If over-plotting of labels is a problem, then use a larger explode factor.
+#' @param textsize Text label size passed to \code{\link[ggplot2]{geom_text}} 
 #' @usage
 #' plot_pca(
 #' data, 
@@ -65,8 +66,8 @@ pca_fit_loadings <- function(x, labels_at_edge, explode){
 #' yLabel = "Principal component 2", 
 #' pca_function = princomp, 
 #' labels_at_edge = TRUE,
-#' explode = 1.1, textsize = 3)
-#' @param textsize Font size
+#' explode = 1.1, 
+#' textsize = 3)
 #' @export 
 plot_pca <- function(data,
     labeltext = names(data),

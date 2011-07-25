@@ -18,9 +18,9 @@ Description: Most of the cluster in the R packages
     ggplot() for plotting. The package supports data
     extraction for hclust, dendrogram, tree, kmeans and
     Mclust.
-Version: 0.0-15
+Version: 0.0-17
 URL: www.pentalibra.com
-Date: 2011-07-15
+Date: 2011-07-25
 Depends:
     stats,
     cluster
